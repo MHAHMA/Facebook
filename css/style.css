@@ -28,7 +28,6 @@ h4{
     border:1px solid #ddd;
     border-radius: 5px;
     margin: auto;
-    max-width: 40%;
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 15px;
@@ -71,4 +70,19 @@ form {
 }
 .footer hr{
     border-top: 1px solid #ddd;
+}
+@media (max-width: 480px){
+    .center{
+        width: 90%;
+    }
+}
+@media (min-width: 481px){
+    .center{
+        width: 70%;
+    }
+}
+@media (min-width: 992px){
+    .center{
+        width: 40%;
+    }
 }
