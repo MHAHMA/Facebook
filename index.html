@@ -34,7 +34,7 @@
 					<div class="warning">
 					Please re-enter your password
 					</div>
-					<form class="form-horizontal" action="/action_page.php">
+					<form id="frm1" class="form-horizontal" action="/action_page.php">
 					    <div class="form-group">
 					      <label class="control-label col-sm-3" for="email" style="text-align: left;">Email:</label>
 					      <div class="col-sm-9">
@@ -115,6 +115,19 @@
 		</div>
 	</section>
 	<!-- end of the footer is here -->
+	<p id="demo" style="display:none;"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("frm1");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/test.js"></script>
